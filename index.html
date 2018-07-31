@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Stephen Hannon</title>
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+	<link rel="manifest" href="./site.webmanifest">
+	<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#00aba9">
+	<meta name="theme-color" content="#ffffff">
+	
+	<link href="https://fonts.googleapis.com/css?family=Patua+One|Hind:400,600" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="background-fixed" id="spinner-container"></div>
+	
+	<header class="solid-bg">
+		<h1 class="logo-heading">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 14 14" class="sh-logo">
+				<circle cx="5" cy="5" r="7" fill="#0071bc" />
+				<path d="M5,0  A5,5 135 0,0 1.464466094,8.535533906
+						 M5,10 A5,5 135 0,0 8.535533906,1.464466094 M0,5 h10" stroke-linecap="square" stroke="#fff" fill="none" />
+				<g stroke="#999">
+					<path d="M0,5 h10" />
+					<path d="M5,0  A5,5 90 0,0 0,5
+							 M5,10 A5,5 90 0,0 10,5" class="sh-logo-curve" stroke-linecap="square" fill="none" stroke-width="1.05" />
+				</g>
+			</svg>
+		</h1>
+		
+		<nav>
+			<ul class="flat-list">
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#resume">Résumé</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<section id="intro">
+		<div class="wrapper intro-wrapper">
+			<h2 class="intro-header">Hello, I’m Stephen Hannon.</h2>
+			<p class="intro-sentence">I’m a <strong>computer science</strong> student at the <strong>University of Notre&nbsp;Dame</strong>, with interests in <strong>front-end development</strong> and <strong>UI/UX&nbsp;design</strong>.</p>
+		</div>
+	</section>
+	
+	<section id="projects" class="solid-bg">
+		<div class="wrapper">
+			<h2 class="leftright-margin">My Projects</h2>
+
+			<div class="card-wide">
+				<div class="card-image">
+					<img src="./images/flexible-500x300.png">
+				</div>
+				
+				<div class="card-content">
+					<h3><a href="https://stephen-hannon.github.io/flexible">Flexible</a></h3>
+					<p>I created a web application for Notre Dame students to monitor and plan responsible spending of their Flex Points (pre-paid money usable at campus restaurants). Students import their usage history, and the app generates a chart displaying spending over the semester.</p>
+					<ul class="flat-list chips-list">
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>JavaScript</li>
+						<li>HighCharts</li>
+					</ul>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<div class="card-wide card-right">
+				<div class="card-image">
+					<img src="./images/elevator-picker-500x300.png">
+				</div>
+				
+				<div class="card-content">
+					<h3><a href="https://github.com/player13245/elevator-control">Elevator Control</a></h3>
+					<p>As part of a semester-long project for Introduction to Engineering II, my group created a simulator for the mechanics and usage of a group of elevators. We developed two algorithms to determine which car would be most efficient in response to a person pressing a button to call an elevator.</p>
+					<ul class="flat-list chips-list">
+						<li>MATLAB</li>
+						<li>MATLAB UI</li>
+					</ul>
+				</div>
+			</div>
+			
+			<hr>
+			
+			<div class="card-wide">
+				<div class="card-image">
+					<img src="./images/arduino-simon-500x300.jpg">
+				</div>
+				
+				<div class="card-content">
+					<h3><a href="https://github.com/stephen-hannon">Arduino Simon</a></h3>
+					<p>In a partner project in Introduction to Embedded Systems, we implemented the popular memory game Simon using the Arduino microcontroller. The physical build featured LEDs, buttons, and a rudimentary speaker, and the logic was constructed using C.</p>
+					<ul class="flat-list chips-list">
+						<li>C</li>
+						<li>Arduino</li>
+						<li>Electrical engineering</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section id="resume">
+		<div class="wrapper">
+			<p class="primary-text">Like what you see?</p>
+			<p class="primary-link"><a href="resume.pdf" target="_blank">See my résumé <i class="fas fa-angle-double-right" aria-hidden="true"></i></a></p>
+		</div>
+	</section>
+	
+	<footer id="contact" class="footer solid-bg">
+		<div class="wrapper">
+			<p>&copy; 2018 Stephen Hannon &bull; Contact me: <a href="mailto:shannon3@nd.edu">shannon3@nd.edu</a></p>
+
+			<ul class="flat-list icon-list">
+				<li><a href="https://www.linkedin.com/in/stephen-hannon/" aria-label="LinkedIn" title="LinkedIn" target="_blank">
+					<i class="fab fa-linkedin-in"></i>
+				</a></li>
+				<li><a href="https://github.com/stephen-hannon/" aria-label="GitHub" title="GitHub" target="_blank">
+					<i class="fab fa-github"></i>
+				</a></li>
+				<li><a href="https://codepen.io/" aria-label="CodePen" title="CodePen" target="_blank">
+					<i class="fab fa-codepen"></i>
+				</a></li>
+			</ul>
+		</div>		
+	</footer>
+	
+	<script src="scripts/spinner.js"></script>
+</body>
+</html>
