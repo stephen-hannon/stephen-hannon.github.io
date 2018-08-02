@@ -8,10 +8,19 @@ window.requestAnimationFrame = window.requestAnimationFrame ||
 	function (callback) {
 		return setTimeout(callback, 1000 / 60)
 	};
+
 window.cancelAnimationFrame = window.cancelAnimationFrame ||
 	window.mozCancelAnimationFrame ||
 	window.webkitCancelAnimationFrame ||
 	window.clearTimeout;
+
+/** Converts num, on the range of fromMin to fromMax, mapped linearly
+  * to the range toMin to toMax
+  * @private
+  */
+spinner.map = function(num, fromMin, fromMax, toMin, toMax) {
+	return (num - fromMin) / (fromMax - fromMin) * (toMax - toMin) + toMin;
+}
 
 /** Returns a random integer between min (inclusive) and max (exclusive)
   * @private
@@ -19,7 +28,7 @@ window.cancelAnimationFrame = window.cancelAnimationFrame ||
 spinner.randomInt = function(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min)) + min;
+	return Math.floor(this.map(Math.random(), 0, 1, min, max));
 }
 
 /**
@@ -46,6 +55,13 @@ spinner.BACKGROUND_COLOR = window.getComputedStyle(spinner.container).background
 spinner.NUM_SPOKES = 6; // this should be an odd number if most of the spiral will be displayed at a time
 spinner.D_THETA = Math.PI / spinner.NUM_SPOKES;
 
+// We keep the normalized center coordinates the same no matter the viewport size.
+// i.e., a value of 0.5 will always place the center in the middle of the screen, even
+// as it is resized.
+spinner.CENTER_X_NORM = Math.random();
+spinner.CENTER_Y_NORM = Math.random();
+spinner.RADIUS_NORM = Math.random();
+
 spinner.COLOR_VELOCITY = 0.5; // how many degrees to increase the hue by every call
 spinner.ANGULAR_VELOCITY = 0.005; // what angle the whole thing rotates by every call
 spinner.DRAWING_SPEED = 5; // how much to add to the length each time drawLoader is called, in pixels
@@ -60,16 +76,23 @@ spinner.init = function () {
 	spinner.ctx.lineWidth = 4;
 
 	var widthHeightMin = 0.8 * Math.min(spinner.canvas.width / 2, spinner.canvas.height / 2);
-	spinner.RADIUS = spinner.randomInt(widthHeightMin / 5, widthHeightMin);
-//	spinner.RADIUS = 50;
+	spinner.RADIUS = spinner.map(spinner.RADIUS_NORM, 0, 1, widthHeightMin / 5, widthHeightMin);
 	spinner.DRAWING_SPEED = spinner.RADIUS / 50;
 	spinner.WEDGE_DISTANCE = spinner.RADIUS * (2 + spinner.D_THETA); // curve length of one wedge
 	spinner.DRAWING_LENGTH = 4 * spinner.WEDGE_DISTANCE; // how much of the spiral to display at a time
 
-	spinner.centerX = spinner.randomInt(spinner.RADIUS,
-										spinner.canvas.width - spinner.RADIUS);
-	spinner.centerY = spinner.randomInt(spinner.RADIUS,
-										spinner.canvas.height - spinner.RADIUS);
+	spinner.centerX = spinner.map(
+		spinner.CENTER_X_NORM,
+		0, 1,
+		spinner.RADIUS,
+		spinner.canvas.width - spinner.RADIUS
+	);
+	spinner.centerY = spinner.map(
+		spinner.CENTER_Y_NORM,
+		0, 1,
+		spinner.RADIUS,
+		spinner.canvas.height - spinner.RADIUS
+	);
 };
 spinner.init();
 
@@ -137,7 +160,6 @@ spinner.drawLoader = function () {
 				skipLength = 0;
 			}
 		}
-		// console.log(drawingRemaining, line1Length)
 		
 		if (Math.abs(phi - spinner.D_THETA) < Number.EPSILON) {
 			// like phi === D_THETA, but avoids problems with floating-point addition
