@@ -48,17 +48,21 @@ body {
 .icon-list {
 	margin: 2rem 0;
 }
-/* TODO: make this not hard-coded */
 .icon-list li {
 	margin: 0 1rem;
 }
 .icon-list li a {
+	display: inline-flex;
+	width: 4rem;
+	height: 4rem;
 	border: 2px solid #fff;
-	padding: .5rem 1.6rem;
+	align-items: center;
+	justify-content: center;
 }
 .icon-list li a:hover {
 	background-color: #fff;
 	color: #0071bc;
+	text-decoration: none;
 }
 
 .chips-list li {
@@ -133,13 +137,12 @@ header::before {
 	text-align: right;
 }
 @media screen and (max-width: 900px) {
+	/* let the logo go to the left to make room on small screens */
 	header::before {
 		content: initial;
 	}
 }
 
-nav li {
-}
 nav a {
 	display: inline-block;
 	text-transform: uppercase;
@@ -153,17 +156,15 @@ nav a:hover {
 	text-decoration: none;
 }
 
-#intro {
-/*	background-color: #fdd;*/
-}
 .intro-wrapper {
-	padding: 8rem 8rem;
+	margin: 10rem auto;
+	padding: 0 8rem;
 	max-width: 800px
 }
 .intro-header {
+	margin: 8rem 0;
 	font-size: 5rem;
 	text-align: center;
-	margin: 0;
 }
 .intro-sentence {
 	font-size: 3.5rem;
