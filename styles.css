@@ -71,8 +71,8 @@ body {
 	font-family: Consolas, Monaco, 'Courier New', Courier, monospace;
 	font-size: 1.4rem;
 	text-transform: lowercase;
-	padding: .4rem .8rem;
-	margin: 0 .4rem;
+	padding: 0.4rem 0.8rem;
+	margin-right: 0.8rem;
 }
 
 a {
@@ -149,20 +149,19 @@ nav a:hover {
 	text-decoration: none;
 }
 
-.intro-wrapper {
+/* .intro-wrapper {
 	margin: 10rem auto;
 	padding: 0 8rem;
 	max-width: 800px
-}
+} */
 .intro-header {
 	margin: 8rem 0;
 	font-size: 5rem;
-	text-align: center;
 }
 .intro-sentence {
 	font-size: 3.5rem;
-	margin: 4rem auto;
-	width: 90%;
+	margin: 4rem 0;
+	width: 80%;
 }
 
 @media screen and (max-width: 600px) {
