@@ -31,9 +31,10 @@ body {
 }
 
 .wrapper {
-	max-width: 900px;
+	max-width: 1000px;
 	margin: 0 auto;
 	padding: 4rem 0;
+	box-sizing: border-box;
 }
 
 .flat-list {
@@ -93,10 +94,13 @@ h2 {
 h3 {
 	font-size: 2.5rem;
 }
+hr {
+	margin: 5rem 0;
+}
 
-.leftright-margin {
-	margin-left: 2rem;
-	margin-right: 2rem;
+.leftright-spacing {
+	padding-left: 4rem;
+	padding-right: 4rem;
 }
 
 .highlight {
@@ -161,11 +165,6 @@ nav a:hover {
 	text-decoration: none;
 }
 
-/* .intro-wrapper {
-	margin: 10rem auto;
-	padding: 0 8rem;
-	max-width: 800px
-} */
 .intro-header {
 	margin: 8rem 0;
 	font-size: 5rem;
@@ -177,10 +176,6 @@ nav a:hover {
 }
 
 @media screen and (max-width: 600px) {
-	.intro-wrapper {
-		padding-right: 4rem;
-		padding-left: 4rem;
-	}
 	.intro-sentence {
 		width: initial;
 	}
@@ -191,7 +186,12 @@ nav a:hover {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	padding: 2rem 0;
+	margin: 4rem -0.5rem;
+}
+.card-image,
+.card-content {
+	padding-right: 1rem;
+	padding-left: 1rem;
 }
 .card-right {
 	flex-wrap: wrap-reverse;
@@ -206,6 +206,11 @@ nav a:hover {
 .card-image a {
 	display: block;
 	position: relative;
+	width: 100%;
+	height: auto;
+	max-width: 500px;
+	min-width: 300px;
+	margin: auto 0;
 }
 .card-image a::before {
 	content: "";
@@ -223,15 +228,10 @@ nav a:hover {
 .card-image img {
 	display: block;
 	width: 100%;
-	height: auto;
-	max-width: 500px;
-	min-width: 300px;
-	margin: auto;
 	border-radius: 10px;
 }
 .card-content {
 	flex: 1;
-	padding: 0 2rem;
 	min-width: 300px;
 }
 .card-wide h3 {
@@ -252,9 +252,6 @@ nav a:hover {
 	background-color: #0071bc;
 	color: #fff;
 	text-align: center;
-}
-.footer .wrapper {
-	padding: 2rem 5rem;
 }
 .footer p {
 	margin: 1rem 0;
