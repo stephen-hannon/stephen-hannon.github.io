@@ -103,20 +103,10 @@ hr {
 	padding-right: 4rem;
 }
 
-.highlight {
-	font-style: normal;
-	position: relative;
-}
-.highlight::after {
-	content: "";
-    width: 100%;
-    height: 2rem;
-    position: absolute;
-    background-color: #037293;
-    padding: 0 0.2rem;
-    left: -0.2rem;
-    bottom: 1rem;
-    z-index: -1;
+mark {
+	background-color: transparent;
+	color: inherit;
+	background-image: linear-gradient(180deg, rgba(255,255,255,0) 50%, #037293 50%);
 }
 
 .solid-bg {
