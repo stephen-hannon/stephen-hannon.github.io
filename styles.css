@@ -183,10 +183,10 @@ nav a:hover {
 	padding-right: 1rem;
 	padding-left: 1rem;
 }
-.card-right {
+.card-wide:nth-of-type(even) {
 	flex-wrap: wrap-reverse;
 }
-.card-right .card-image {
+.card-wide:nth-of-type(even) .card-image {
 	order: 1;
 }
 .card-image {
