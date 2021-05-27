@@ -19,17 +19,6 @@ body {
 	color: #fff;
 }
 
-.background-fixed {
-	background-color: #444;
-	position: fixed;
-	overflow: hidden;
-	z-index: -1;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
-
 .wrapper {
 	max-width: 1000px;
 	margin: 0 auto;
@@ -245,4 +234,94 @@ nav a:hover {
 }
 .footer p {
 	margin: 1rem 0;
+}
+
+/**** Background spinner ****/
+/* transpiled from spinner.scss */
+#spinner-svg {
+	background-color: #444;
+	position: fixed;
+	overflow: hidden;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+#spinner-path {
+  fill: none;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-dasharray: 302.831853 908.495559;
+  -webkit-animation-name: spinner-color, spinner-spin, spinner-dash;
+          animation-name: spinner-color, spinner-spin, spinner-dash;
+  -webkit-animation-duration: 10s, 20s, 20s;
+          animation-duration: 10s, 20s, 20s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes spinner-spin {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes spinner-spin {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@-webkit-keyframes spinner-color {
+  0% {
+    stroke: #ff6355;
+  }
+  20% {
+    stroke: #fae442;
+  }
+  40% {
+    stroke: #8bd448;
+  }
+  60% {
+    stroke: #2aa8f2;
+  }
+  80% {
+    stroke: #9c4f96;
+  }
+  100% {
+    stroke: #ff6355;
+  }
+}
+@keyframes spinner-color {
+  0% {
+    stroke: #ff6355;
+  }
+  20% {
+    stroke: #fae442;
+  }
+  40% {
+    stroke: #8bd448;
+  }
+  60% {
+    stroke: #2aa8f2;
+  }
+  80% {
+    stroke: #9c4f96;
+  }
+  100% {
+    stroke: #ff6355;
+  }
+}
+@-webkit-keyframes spinner-dash {
+  to {
+    stroke-dashoffset: 1211.327412;
+  }
+}
+@keyframes spinner-dash {
+  to {
+    stroke-dashoffset: 1211.327412;
+  }
 }
