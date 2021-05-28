@@ -1,9 +1,5 @@
 @use "sass:list";
 
-$spokes: 6;
-$radius: 40;
-$PI: 3.14159265;
-$length: ($spokes * $radius * 4) + (2 * $PI * $radius);
 $colors: #ff6355, #fae442, #8bd448, #2aa8f2, #9c4f96, #ff6355;
 
 #spinner-svg {
@@ -13,14 +9,14 @@ $colors: #ff6355, #fae442, #8bd448, #2aa8f2, #9c4f96, #ff6355;
 	top: 0;
 	left: 0;
 }
+
 #spinner-path {
 	fill: none;
 	stroke-width: 2;
 	stroke-linejoin: round;
-// 	stroke-dasharray: $length * 0.25;
-	stroke-dasharray: ($length * 0.25) ($length * 0.75);
 	animation-name: spinner-color, spinner-spin, spinner-dash;
-	animation-duration: 10s, 20s, 20s;
+	animation-direction: normal, normal, reverse;
+	animation-duration: 10s, 30s, 30s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 }
@@ -41,6 +37,6 @@ $colors: #ff6355, #fae442, #8bd448, #2aa8f2, #9c4f96, #ff6355;
 
 @keyframes spinner-dash {
 	to {
-		stroke-dashoffset: $length;
+		stroke-dashoffset: 0;
 	}
 }

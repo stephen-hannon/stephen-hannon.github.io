@@ -256,8 +256,10 @@ nav a:hover {
   stroke-dasharray: 302.831853 908.495559;
   -webkit-animation-name: spinner-color, spinner-spin, spinner-dash;
           animation-name: spinner-color, spinner-spin, spinner-dash;
-  -webkit-animation-duration: 10s, 20s, 20s;
-          animation-duration: 10s, 20s, 20s;
+  -webkit-animation-direction: normal, normal, reverse;
+          animation-direction: normal, normal, reverse;
+  -webkit-animation-duration: 10s, 30s, 30s;
+          animation-duration: 10s, 30s, 30s;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
@@ -317,11 +319,11 @@ nav a:hover {
 }
 @-webkit-keyframes spinner-dash {
   to {
-    stroke-dashoffset: 1211.327412;
+    stroke-dashoffset: 0;
   }
 }
 @keyframes spinner-dash {
   to {
-    stroke-dashoffset: 1211.327412;
+    stroke-dashoffset: 0;
   }
 }
