@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="44" height="44" viewBox="-7 -2 44 44">
+	<path fill="none" stroke="#000" stroke-linecap="round" stroke-width="2" d="M0 0v35a5 5 0 1 0 10 0v-5a5 5 0 1 1 10 0v10M10 0v10a5 5 0 1 0 10 0V5a5 5 0 1 1 10 0v35"></path>
+<style>
+@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: invert(100%); } }
+</style></svg>
