@@ -266,6 +266,14 @@ nav a:hover {
           animation-iteration-count: infinite;
 }
 
+@media (prefers-reduced-motion) {
+	#spinner-path {
+		        animation: none;
+		-webkit-animation: none;
+		stroke: #ff6355;
+	}
+}
+
 @-webkit-keyframes spinner-spin {
   to {
     transform: rotate(-360deg);

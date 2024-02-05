@@ -21,6 +21,13 @@ $colors: #ff6355, #fae442, #8bd448, #2aa8f2, #9c4f96, #ff6355;
 	animation-iteration-count: infinite;
 }
 
+@media (prefers-reduced-motion) {
+	#spinner-path {
+		animation: none;
+		stroke: list.nth($colors, 1);
+	}
+}
+
 @keyframes spinner-spin {
 	to {
 		transform: rotate(-360deg);
